@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Calea</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <div id="app" role="main" aria-label="Calea Chatbot">
+
+        <div id="header">
+            <div id="header-left">
+                <div id="header-icon">
+                    <img src="CaleaChatbotV2.png" alt="Calea Profile Picture" id="profile-img" />
+                </div>
+                <div id="header-text">
+                    <h2>Calea</h2>
+                    <p>Track • Save • Enjoy</p>
+                </div>
+            </div>
+            <div id="tabs">
+                <button class="tab-btn active" data-tab="chat" onclick="switchTab('chat')">Chat</button>
+                <button class="tab-btn" data-tab="analytics" onclick="switchTab('analytics')">Analytics</button>
+                <button class="tab-btn" data-tab="history" onclick="switchTab('history')">History</button>
+                <button class="tab-btn" data-tab="goals" onclick="switchTab('goals')">Goals</button>
+            </div>
+        </div>
+
+        <div id="summary-bar">
+            <div class="stat">
+                <div class="stat-label">Monthly Budget</div>
+                <div class="stat-value" id="stat-budget">₱0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Spent</div>
+                <div class="stat-value red" id="stat-spent">₱0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Remaining</div>
+                <div class="stat-value green" id="stat-remaining">₱0</div>
+            </div>
+        </div>
+
+        <div id="chat-panel" class="tab-panel active">
+            <div id="messages">
+                <div class="msg bot">
+                    <div class="bubble">
+                        Hi! I'm your AI finance assistant. I can help you log expenses, manage budgets, and track
+                        savings goals.<br><br>
+                        <b>💡 Pro Tip for Prompting:</b><br>
+                        For the most accurate tracking, include the <b>amount</b>, the <b>reason</b>, and a general
+                        <b>category</b>. <br>
+                        <i>Example: "I spent ₱450 on an Uber ride home (transport)."</i>
+                    </div>
+                    <div class="quick-chips">
+                        <span class="chip" onclick="sendChip(this)">Add expense</span>
+                        <span class="chip" onclick="sendChip(this)">Set monthly budget</span>
+                        <span class="chip" onclick="sendChip(this)">Saving tips</span>
+                        <span class="chip" onclick="sendChip(this)">Show spending summary</span>
+                    </div>
+                    <div class="msg-time">now</div>
+                </div>
+            </div>
+            <div id="input-area">
+                <input id="user-input" type="text" placeholder="e.g. I spent ₱250 on groceries…"
+                    onkeydown="if(event.key==='Enter') sendMsg()" />
+                <button id="send-btn" onclick="sendMsg()" aria-label="Send">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="analytics-panel" class="tab-panel">
+        </div>
+
+        <div id="history-panel" class="tab-panel">
+        </div>
+
+        <div id="goals-panel" class="tab-panel">
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
