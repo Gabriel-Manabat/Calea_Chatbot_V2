@@ -1,6 +1,6 @@
 /* ── Config ── */
 // IMPORTANT: Paste your NEW Gemini API Key here
-const GEMINI_API_KEY = 'AIzaSyDcC8o3s86hR7T9wztgSW0Owm7lJYm30zw';
+const GEMINI_API_KEY = "YOUR API KEY HERE";
 
 /* ── State & Persistence ── */
 const STORAGE_KEY = 'finance_assistant_data';
